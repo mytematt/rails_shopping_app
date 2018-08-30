@@ -10,4 +10,13 @@ class Item < ApplicationRecord
     "#{self.name} {self.price}"
   end
 
+  before_validation :ensure_sku_has_value
+
+  private
+   def ensure_sku_has_value
+    if sku.nil?
+      self.sku = 1111
+    end  
+  end
+
 end
