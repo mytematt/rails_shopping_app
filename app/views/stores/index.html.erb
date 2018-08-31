@@ -1,0 +1,9 @@
+<h1>Welcome to the Shopping App</h1>
+<%= link_to 'Create a New Store', new_store_path %>
+
+<h2> List of Stores</h2>
+<ul>
+  <% @stores.each do |store| %>
+    <li><%= link_to store.name, store_path(store) %></li>
+  <% end %>
+</ul>
